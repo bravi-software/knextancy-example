@@ -1,0 +1,29 @@
+db: &DB
+  image: postgres:9.4.4
+  ports:
+    - 5432:5432
+  environment:
+    POSTGRES_USER: user
+    POSTGRES_PASSWORD: password
+    POSTGRES_DB: profile
+
+dbTest:
+  <<: *DB
+
+local: &LOCAL
+  image: cusspvz/node:0.12.7-onbuild
+  command: npm run dev
+  volumes:
+    - .:/app
+  ports:
+    - 3000
+  links:
+    - db:db
+
+test: &TEST
+  <<: *LOCAL
+  command: npm test
+  environment:
+    NODE_ENV: test
+  links:
+    - dbTest:db
