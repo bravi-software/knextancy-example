@@ -11,7 +11,7 @@ dbTest:
   <<: *DB
 
 local: &LOCAL
-  image: cusspvz/node:0.12.7-onbuild
+  image: cusspvz/node:development
   command: npm run dev
   volumes:
     - .:/app
