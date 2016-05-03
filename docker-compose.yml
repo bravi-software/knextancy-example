@@ -22,7 +22,7 @@ local: &LOCAL
 
 test: &TEST
   <<: *LOCAL
-  command: npm test
+  command: test
   environment:
     NODE_ENV: test
   links:
