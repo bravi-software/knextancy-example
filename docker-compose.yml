@@ -1,7 +1,7 @@
 db: &DB
   image: postgres:9.4.4
   ports:
-    - 5432:5432
+    - 5432
   environment:
     POSTGRES_USER: user
     POSTGRES_PASSWORD: password
@@ -11,10 +11,10 @@ dbTest:
   <<: *DB
 
 local: &LOCAL
-  image: cusspvz/node:development
+  image: node:6-onbuild
   command: npm run dev
   volumes:
-    - .:/app
+    - .:/usr/src/app
   ports:
     - 3000
   links:
@@ -22,7 +22,7 @@ local: &LOCAL
 
 test: &TEST
   <<: *LOCAL
-  command: test
+  command: npm test
   environment:
     NODE_ENV: test
   links:

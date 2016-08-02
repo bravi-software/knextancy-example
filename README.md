@@ -21,9 +21,10 @@ This is how your database is gonna look like:
 ### With docker compose
 
 ```bash
-docker-compose run --service-ports --rm local bash
-npm install # in case you have not installed yet
-npm start
+# in case you have not installed the deps yet
+docker-compose run --service-ports --rm local npm install
+
+docker-compose run --service-ports --rm local
 ```
 
 ### Locally
@@ -37,7 +38,9 @@ npm start
   * DB_DATABASE
 
 ```bash
-npm install # in case you have not installed yet
+# in case you have not installed yet
+npm install
+
 npm start
 ```
 
@@ -46,9 +49,10 @@ npm start
 ### With docker compose
 
 ```bash
-docker-compose run --rm test bash
-npm install # in case you have not installed yet
-npm test
+# in case you have not installed the deps yet
+docker-compose run --rm test npm install
+
+docker-compose run --rm test
 ```
 
 ### Locally
@@ -56,6 +60,8 @@ npm test
 The same configuration to running the service locally.
 
 ```bash
-npm install # in case you have not installed yet
+ # in case you have not installed the deps yet
+npm install
+
 npm test
 ```
