@@ -30,7 +30,7 @@
     "es6-error": "^2.0.0",
     "express": "^4.13.3",
     "knex": "^0.10.0",
-    "knextancy": "^2.1.1",
+    "knextancy": "^2.1.2",
     "meaning-error": "^2.0.0",
     "meaning-error-middleware": "^0.1.1",
     "pg": "^4.4.1",
